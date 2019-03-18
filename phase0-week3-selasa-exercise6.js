@@ -25,9 +25,8 @@ function digitPerkalianMinimum(angka) {
   for(var batas = j12length; batas >= 0; batas--){  
     for(var now = 0; now <= batas; now++){
       var next = now + 1;
-      var temp = ''; //variabel temporary untuk nampung saat menukar angka
-      if(jumlah1dan2[now] > jumlah1dan2[next]){ //kalau angka di indeks selanjutnya < angka di indeks sekarang
-        //tukar posisi, yang paling kecil makin ke kanan
+      var temp = ''; 
+      if(jumlah1dan2[now] > jumlah1dan2[next]){ 
         temp = jumlah1dan2[next];
         jumlah1dan2[next] = jumlah1dan2[now];
         jumlah1dan2[now] = temp;
