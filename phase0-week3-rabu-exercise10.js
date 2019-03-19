@@ -1,7 +1,7 @@
 function changeMe(arr) {
     // you can only write your code here!
+    
     //move the array[][] into variable then put it inside of the object
-  
     //do the loop as much as = (arr.length-1) times, each loop print the output as expected on the exercise objectives
     for(var i =0; i < arr.length; i++){
       var fullName = ''; //full name
