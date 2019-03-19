@@ -1,6 +1,8 @@
 function changeMe(arr) {
     // you can only write your code here!
     //move the array[][] into variable then put it inside of the object
+  
+    //do the loop as much as = (arr.length-1) times, each loop print the output as expected on the exercise objectives
     for(var i =0; i < arr.length; i++){
       var fullName = ''; //full name
       var fN = ''; //first name
@@ -28,14 +30,14 @@ function changeMe(arr) {
           default :
           break;
         }//end of conditional switch-case
-        
+          
         //if a is empty but not null, then assign string 'Invalid birth year' into a variable
         if(a == ''){
           a = 'Invalid birth year'
         }//end of conditional if
-  
+    
       }//end of loop array[][]
-
+  
       //object
       var myObj =
       {
@@ -44,32 +46,32 @@ function changeMe(arr) {
         gender : g, //assign g variable into myObj 'g'
         age : a, //assign a variable into myObj 'a'
       }
-
-      //print fullname + counter
+  
+      //print fullname + counter at the end of the loop
       console.log(i+1 +'. ' + fullName + ':');
-
-      //print the object
+  
+      //print the object at the end of the loop
       console.log(myObj);
       console.log('\n');
-
+  
     } //end of loop array[]
-  
+    
   }// end of function
-  
-  // TEST CASES
-  changeMe(
-      [
-        ['Christ', 'Evans', 'Male', 1982],
-        ['Robert', 'Downey', 'Male']
-      ]
-    ); // 1. Christ Evans:
-  // { firstName: 'Christ',
-  //   lastName: 'Evans',
-  //   gender: 'Male',
-  //   age: 37 }
-  // 2. Robert Downey:
-  // { firstName: 'Robert',
-  //   lastName: 'Downey',
-  //   gender: 'Male',
-  //   age: 'Invalid Birth Year' }
+    
+    // TEST CASES
+    changeMe(
+        [
+          ['Christ', 'Evans', 'Male', 1982],
+          ['Robert', 'Downey', 'Male']
+        ]
+      ); // 1. Christ Evans:
+    // { firstName: 'Christ',
+    //   lastName: 'Evans',
+    //   gender: 'Male',
+    //   age: 37 }
+    // 2. Robert Downey:
+    // { firstName: 'Robert',
+    //   lastName: 'Downey',
+    //   gender: 'Male',
+    //   age: 'Invalid Birth Year' }
   changeMe([]); // ""
