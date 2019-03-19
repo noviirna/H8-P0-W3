@@ -1,19 +1,21 @@
 function shoppingTime(memberId, money) {
   // you can only write your code here!
 
-  var remainingMoney = money;
-
-  var hargaStacattu = 1500000;
-  var hargaZoro = 500000;
-  var hargaHN = 250000;
-  var hargaUniklooh = 175000;
-  var hargaCasing = 50000;
+  var remainingMoney = money; //initiate by declaring remainingMoney variable to store remaining money before and after bought item(s) from the store
   
+  //assign the price into the variable
+  var hargaStacattu = 1500000; // harga sepatu stacattu
+  var hargaZoro = 500000; // harga baju zoro
+  var hargaHN = 250000; // harga baju hn
+  var hargaUniklooh = 175000; // harga sweater uniklooh
+  var hargaCasing = 50000; // harga casing handphone
+  
+  //assign item for sale into itemsSale variable and its price into itemsPrice variable;
   var itemsSale = ['Sepatu Stacattu', 'Baju Zoro', 'Baju HN','Sweater Uniklooh', 'Casing HP']
   var itemsPrice = [hargaStacattu, hargaZoro, hargaHN, hargaUniklooh, hargaCasing];
 
+  //declare a variable to store the bought item, assign it as an empty array
   var itemsBought = [];
-
 
   //if not a member of toko X, then return string 'Mohon maaf, toko X hanya berlaku untuk member saja'
   if(memberId == '' || memberId == undefined || memberId == null){
@@ -25,6 +27,7 @@ function shoppingTime(memberId, money) {
     return 'Mohon maaf, uang tidak cukup'
   }
 
+  // do the loop to calculate the item, if remaining money is enough to buy the item then add the item to the itemsBought array and substract the remaining money with the item's price, do it on each loop
   for(var i = 0; i <= itemsPrice.length; i++){
     if(remainingMoney >= itemsPrice[i]){
       itemsBought.push(itemsSale[i]);
@@ -32,12 +35,15 @@ function shoppingTime(memberId, money) {
     }
   }// end of for loop
 
+  //store the data in the variable above into myObj
   var myObj = {
     memberId : memberId,
     money : money,
     listPurchased: itemsBought,
     changeMoney: remainingMoney
   }
+
+  //return myObj to print the object into the terminal
   return myObj;
 }//end of function
 
