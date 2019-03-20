@@ -26,7 +26,7 @@ function cariModus(arr) {
     
     var modusIs = null;
     for(var i = arrcounter.length-1; i >= 0; i--){
-    var maxCounter;
+      var maxCounter;
       if(modusIs == null){
         if(arrcounter[i] > arrcounter[i-1]){
           modusIs = existingNumber[i-1];
