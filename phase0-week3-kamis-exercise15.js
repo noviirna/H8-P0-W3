@@ -1,72 +1,23 @@
 function highestScore (students) {
   // Code disini
-  arrFoxes = []
-  arrWolves = []
-  arrTigers = []
-  
-  //get foxes class's student with the highest score 
-  for(var i = 0; i < students.length; i++){
-    if(students[i].kelas == 'foxes'){
-      var temp = {
-        name: students[i].name,
-        score: students[i].score
+  var result = {};
+  for (var i = 0; i < students.length; i++){
+    var temp = {
+      name : students[i].name,
+      score : students[i].score
+    }
+    if(result[students[i].kelas] == undefined){
+      result[students[i].kelas] = temp;
+    }
+    else{
+    var temp = {
+        name : students[i].name,
+        score : students[i].score
       }
-    arrFoxes.push(temp);
-    }
-  }
-  var maxFox = arrFoxes[0];
-  for(var i = 0; i < arrFoxes.length; i++){
-    if(maxFox.score < arrFoxes[i].score){
-      maxFox = arrFoxes[i]
-    }
-  }
-  
-  //get wolves class's student with the highest score 
-  for(var i = 0; i < students.length; i++){
-    if(students[i].kelas == 'wolves'){
-      var temp = {
-        name: students[i].name,
-        score: students[i].score
-        }
-      arrWolves.push(temp);
-    }
-  }
-  var maxWolf = arrWolves[0];
-  for(var i = 0; i < arrWolves.length; i++){
-    if(maxWolf.score < arrWolves[i].score){
-      maxWolf = arrWolves[i]
-    }
-  }
-
-  //get tigers class's student with the highest score 
-  for(var i = 0; i < students.length; i++){
-    if(students[i].kelas == 'tigers'){
-      var temp = {
-        name: students[i].name,
-        score: students[i].score
+      if(result[students[i].kelas] == students[i].kelas && students[i].score > result[students[i].kelas][score]){
+        result[students[i].kelas][score] = temp;
       }
-      arrTigers.push(temp);
     }
-  }
-  var maxTiger = arrTigers[0];
-  for(var i = 0; i < arrTigers.length; i++){
-    if(maxWolf.score < arrTigers[i].score){
-      maxTiger = arrTigers[i]
-    }
-  }
-
-  //define the objects
-  var result = {
-
-  };
-  if(maxFox != undefined){
-    result["foxes"] = maxFox
-  }
-  if(maxWolf != undefined){
-    result["wolves"] = maxWolf
-  }
-  if(maxTiger != undefined){
-    result["tigers"]= maxTiger 
   }
   return result;
 }
