@@ -1,9 +1,6 @@
 function cariMedian(arr) {
-  // you can only write your code here!
-  var medianAt =( arr.length-1) / 2 
-
-  median = (arr[Math.floor(medianAt)] + arr[Math.ceil(medianAt)]) / 2 
-
+  var medianAt =( arr.length-1) / 2 ; 
+  var median = (arr[Math.floor(medianAt)] + arr[Math.ceil(medianAt)]) / 2 ;
   return median;
 }
 
