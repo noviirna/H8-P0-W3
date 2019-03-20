@@ -26,8 +26,8 @@ function cariModus(arr) {
     
     //cek di indeks mana counter yang nilainya terbesar
     var modus = null;
-    var maxCounter = null;
     for(var i = arrcounter.length-1; i >= 0; i--){
+      var maxCounter;
       if(modus == null){
         if(arrcounter[i] > arrcounter[i-1]){
           modus = existingNumber[i];
