@@ -24,32 +24,32 @@ function cariModus(arr) {
       arrcounter.push(counter);
     }
     
-    //cek di indeks mana counter yang nilainya terbesar
-    var modus = null;
-    var maxCounter = null;
+    var modusIs = null;
     for(var i = arrcounter.length-1; i >= 0; i--){
-      if(modus == null){
+    var maxCounter;
+      if(modusIs == null){
         if(arrcounter[i] > arrcounter[i-1]){
-          modus = existingNumber[i];
-          maxCounter = arrcounter[i];
-        }
-        if(arrcounter[i] < arrcounter[i-1]){
-          modus = existingNumber[i];
+          modusIs = existingNumber[i-1];
           maxCounter = arrcounter[i-1];
         }
+        if(arrcounter[i] < arrcounter[i-1]){
+            modusIs = existingNumber[i-1];
+            maxCounter = arrcounter[i-1];
+          }
       }
       else{
         if(arrcounter[i] >= maxCounter){
-          modus = existingNumber[i];
+          modusIs = existingNumber[i];
           maxCounter = arrcounter[i];
         }
-      }
-    }
-    //jika semua angka jumlah counternya sama, maka return -1
-    if(modus == null){
+      } // end of conditional if
+    } // end of for loop
+    
+    if(modusIs == null){
       return -1;
-    }else{
-      return modus;
+    }
+    else{
+      return modusIs;
     }
   }
   
