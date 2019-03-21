@@ -1,18 +1,8 @@
 function shoppingTime(memberId, money) {
   // you can only write your code here!
-
-  var remainingMoney = money; //initiate by declaring remainingMoney variable to store remaining money before and after bought item(s) from the store
-  
-  //assign the price into the variable
-  var hargaStacattu = 1500000; // harga sepatu stacattu
-  var hargaZoro = 500000; // harga baju zoro
-  var hargaHN = 250000; // harga baju hn
-  var hargaUniklooh = 175000; // harga sweater uniklooh
-  var hargaCasing = 50000; // harga casing handphone
-  
   //assign item for sale into itemsSale variable and its price into itemsPrice variable;
   var itemsSale = ['Sepatu Stacattu', 'Baju Zoro', 'Baju HN','Sweater Uniklooh', 'Casing HP']
-  var itemsPrice = [hargaStacattu, hargaZoro, hargaHN, hargaUniklooh, hargaCasing];
+  var itemsPrice = [1500000, 500000, 250000, 175000, 50000];
 
   //declare a variable to store the bought item, assign it as an empty array
   var itemsBought = [];
@@ -29,9 +19,9 @@ function shoppingTime(memberId, money) {
 
   // do the loop to calculate the item, if remaining money is enough to buy the item then add the item to the itemsBought array and substract the remaining money with the item's price, do it on each loop
   for(var i = 0; i <= itemsPrice.length; i++){
-    if(remainingMoney >= itemsPrice[i]){
+    if(money >= itemsPrice[i]){
       itemsBought.push(itemsSale[i]);
-      remainingMoney = remainingMoney - itemsPrice[i];
+      money = money - itemsPrice[i];
     }
   }// end of for loop
 
@@ -40,7 +30,7 @@ function shoppingTime(memberId, money) {
     memberId : memberId,
     money : money,
     listPurchased: itemsBought,
-    changeMoney: remainingMoney
+    changeMoney: money
   }
 
   //return myObj to print the object into the terminal
