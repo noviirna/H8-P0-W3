@@ -12,7 +12,7 @@ function tukarBesarKecil(str) {
         }
       } // end of for loop
         
-        if(isAlphabet == false){
+      if(isAlphabet == false){
         result = result + str[i];
       }
         else{
