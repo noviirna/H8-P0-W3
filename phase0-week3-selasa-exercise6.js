@@ -6,7 +6,6 @@ function digitPerkalianMinimum(angka) {
         pembagi.push(i);
     }
   }
-
   var arrDigitSum = [];
   for (var i = 0; i < pembagi.length; i++){
     for(var j = pembagi.length-1; j >=0; j--){
@@ -15,9 +14,8 @@ function digitPerkalianMinimum(angka) {
         i++;    
     }
   }
-
-  var median = ( arrDigitSum.length - 1 ) / 2
-  var result = ( arrDigitSum[Math.floor(median)] + arrDigitSum[Math.ceil(median)] ) / 2
+  var smallestAt = Math.floor(arrDigitSum.length / 2)
+  var result = arrDigitSum[smallestAt]
   return result;
 }
 
@@ -28,3 +26,6 @@ console.log(digitPerkalianMinimum(20)); // 2
 console.log(digitPerkalianMinimum(179)); // 4
 console.log(digitPerkalianMinimum(1)); // 2
 
+  // appproach untuk ambil result nya bisa juga seperti ini, pakai median
+  // var median = ( arrDigitSum.length - 1 ) / 2
+  // var result = ( arrDigitSum[Math.floor(median)] + arrDigitSum[Math.ceil(median)] ) / 2
