@@ -1,26 +1,26 @@
-function tukarBesarKecil(words) {
+function tukarBesarKecil(str) {
     var upperCaseAlphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var lowerCaseAlphabet = 'abcdefghijklmnopqrstuvwxyz';
     var result = '';
   
-    for(var i = 0; i < words.length; i++){
+    for(var i = 0; i < str.length; i++){
       var isAlphabet = false;
       
       for(var j = 0; j < upperCaseAlphabet.length; j++){
-        if(words[i] == upperCaseAlphabet[j] || words[i] == lowerCaseAlphabet[j]){
+        if(str[i] == upperCaseAlphabet[j] || str[i] == lowerCaseAlphabet[j]){
           isAlphabet = true;
         }
       } // end of for loop
         
         if(isAlphabet == false){
-        result = result + words[i];
+        result = result + str[i];
       }
         else{
         for(var j = 0; j < upperCaseAlphabet.length; j++){
-          if(words[i] == upperCaseAlphabet[j]){
+          if(str[i] == upperCaseAlphabet[j]){
             result = result + lowerCaseAlphabet[j];
           }
-          if(words[i] == lowerCaseAlphabet[j]){
+          if(str[i] == lowerCaseAlphabet[j]){
             result = result + upperCaseAlphabet[j]; 
           }
         } // end of for loop
