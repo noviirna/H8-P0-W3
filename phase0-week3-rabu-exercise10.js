@@ -9,6 +9,7 @@ function changeMe(arr) {
       var lN = ''; //last name
       var g = ''; //gender
       var a = ''; //age
+
       //looping to assign each data from the array into expected variable 
       for(var j = 0; j< arr[i].length; j++){
         //because the array's pattern is [firstname, last name, gender, yearofborn], use conditional switch case
@@ -31,10 +32,14 @@ function changeMe(arr) {
           break;
         }//end of conditional switch-case
           
-        //if a is empty but not null, then assign string 'Invalid birth year' into a variable
+        //if a is '', then assign string 'Invalid birth year' into a variable
         if(a == ''){
           a = 'Invalid birth year'
-        }//end of conditional if
+        }
+        if(a != Math.abs(a)){
+          a = 'Invalid birth year'
+        }
+        //end of conditional if
     
       }//end of loop array[][]
   
@@ -61,8 +66,9 @@ function changeMe(arr) {
     // TEST CASES
     changeMe(
         [
-          ['Christ', 'Evans', 'Male', 1982],
-          ['Robert', 'Downey', 'Male']
+          ['Christ', 'Evans', 'Male', 2020],
+          ['Robert', 'Downey', 'Male'],
+          ['Novi', 'Irnawati', 'Female', 1996]
         ]
       ); // 1. Christ Evans:
     // { firstName: 'Christ',
