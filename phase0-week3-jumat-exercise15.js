@@ -22,4 +22,4 @@ console.log(makanTerusRekursif(90)); // 6
 console.log(makanTerusRekursif(10)); // 1
 console.log(makanTerusRekursif(0)); // 0
 console.log(makanTerusRekursif(35)); // 3
-
+console.log(makanTerusRekursif(15)); // 1
