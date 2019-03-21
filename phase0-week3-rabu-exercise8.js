@@ -3,29 +3,18 @@ function tukarBesarKecil(str) {
     var lowerCaseAlphabet = 'abcdefghijklmnopqrstuvwxyz';
     var result = '';
   
-    for(var i = 0; i < str.length; i++){
-      var isAlphabet = false;
-      
-      for(var j = 0; j < upperCaseAlphabet.length; j++){
-        if(str[i] == upperCaseAlphabet[j] || str[i] == lowerCaseAlphabet[j]){
-          isAlphabet = true;
-        }
-      } // end of for loop
-        
-      if(isAlphabet == false){
-        result = result + str[i];
-      }
-        else{
+    for (var i = 0; i < str.length; i++){
+        var temp = str[i];
         for(var j = 0; j < upperCaseAlphabet.length; j++){
-          if(str[i] == upperCaseAlphabet[j]){
-            result = result + lowerCaseAlphabet[j];
+          if(str[i] === upperCaseAlphabet[j]){
+            temp  = lowerCaseAlphabet[j];
           }
-          if(str[i] == lowerCaseAlphabet[j]){
-            result = result + upperCaseAlphabet[j]; 
+          if(str[i]  === lowerCaseAlphabet[j]){
+            temp  = upperCaseAlphabet[j];
           }
-        } // end of for loop
-      } // end of conditional if else 
-    } // end of for loop
+        }
+        result = result + temp;
+      } // end of for loop
     return result;
   } // end of function
   

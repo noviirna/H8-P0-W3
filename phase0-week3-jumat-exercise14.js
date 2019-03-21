@@ -46,30 +46,19 @@ function setLowerUpperCase (str) {
   var lowerCaseAlphabet = 'abcdefghijklmnopqrstuvwxyz';
   var result = '';
 
-  for(var i = 0; i < str.length; i++){
-    var isAlphabet = false;
-    
+  for (var i = 0; i < str.length; i++){
+    var temp = str[i];
     for(var j = 0; j < upperCaseAlphabet.length; j++){
-      if(str[i] == upperCaseAlphabet[j] || str[i] == lowerCaseAlphabet[j]){
-        isAlphabet = true;
+      if(str[i] === upperCaseAlphabet[j]){
+        temp  = lowerCaseAlphabet[j];
       }
-    } // end of for loop
-      
-      if(isAlphabet == false){
-      result = result + str[i];
+      if(str[i]  === lowerCaseAlphabet[j]){
+        temp  = upperCaseAlphabet[j];
+      }
     }
-      else{
-      for(var j = 0; j < upperCaseAlphabet.length; j++){
-        if(str[i] == upperCaseAlphabet[j]){
-          result = result + lowerCaseAlphabet[j];
-        }
-        if(str[i] == lowerCaseAlphabet[j]){
-          result = result + upperCaseAlphabet[j]; 
-        }
-      } // end of for loop
-    } // end of conditional if else 
+    result = result + temp;
   } // end of for loop
-  return result;
+return result;
 } // end of function
 
 function removeSpaces (str) {
