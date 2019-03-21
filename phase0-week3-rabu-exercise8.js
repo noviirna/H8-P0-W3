@@ -1,22 +1,33 @@
 function tukarBesarKecil(words) {
-  var upperCaseAlphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  var lowerCaseAlphabet = 'abcdefghijklmnopqrstuvwxyz';
-  var result = '';
-
-	//check if words[i] is an alphabet letter, if its true then assign isAlphabet with true
-    for(var i = 0; i < words.length; i++){
-        if(words[i] == lowerCaseAlphabet[i]){
-            result = result + upperCaseAlphabet[i];
+    var upperCaseAlphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var lowerCaseAlphabet = 'abcdefghijklmnopqrstuvwxyz';
+    var result = '';
+  
+    for(var i = 0; i < str.length; i++){
+      var isAlphabet = false;
+      
+      for(var j = 0; j < upperCaseAlphabet.length; j++){
+        if(str[i] == upperCaseAlphabet[j] || str[i] == lowerCaseAlphabet[j]){
+          isAlphabet = true;
         }
-        else if(words[i] == upperCaseAlphabet[i]){
-            result = result + lowerCaseAlphabet[i];
-        }
+      } // end of for loop
+        
+        if(isAlphabet == false){
+        result = result + str[i];
+      }
         else{
-            result = result + words[i];
-        }
-    }
+        for(var j = 0; j < upperCaseAlphabet.length; j++){
+          if(str[i] == upperCaseAlphabet[j]){
+            result = result + lowerCaseAlphabet[j];
+          }
+          if(str[i] == lowerCaseAlphabet[j]){
+            result = result + upperCaseAlphabet[j]; 
+          }
+        } // end of for loop
+      } // end of conditional if else 
+    } // end of for loop
     return result;
-} // end of function
+  } // end of function
   
   // TEST CASES
   console.log(tukarBesarKecil('Hello World')); // "hELLO wORLD"
