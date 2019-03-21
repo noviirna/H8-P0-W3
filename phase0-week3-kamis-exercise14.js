@@ -24,7 +24,7 @@ function naikAngkot(arrPenumpang) {
       penumpang : arrPenumpang[i][0], // nama penumpang
       naikDari : arrPenumpang[i][1], // starting points
       tujuan : arrPenumpang[i][2], // destination
-      bayar : (endAt-startAt) * 2000 // fare
+      bayar : Math.abs((endAt-startAt)) * 2000 // fare
     }
     result.push(objPenumpang); // push each object on the end of each looping
   } // end of the loop
@@ -35,5 +35,5 @@ function naikAngkot(arrPenumpang) {
 console.log(naikAngkot([['Dimitri', 'B', 'F'], ['Icha', 'A', 'B']]));
 // [ { penumpang: 'Dimitri', naikDari: 'B', tujuan: 'F', bayar: 8000 },
 //   { penumpang: 'Icha', naikDari: 'A', tujuan: 'B', bayar: 2000 } ]
-
+console.log(naikAngkot([['Dimitri', 'F', 'C'], ['Icha', 'A', 'B']]));
 console.log(naikAngkot([])); //[]
