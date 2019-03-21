@@ -14,8 +14,10 @@ function highestScore (students) {
         name : students[i].name,
         score : students[i].score
       }
-      if(result[students[i].kelas] == students[i].kelas && students[i].score > result[students[i].kelas][score]){
-        result[students[i].kelas][score] = temp;
+      if(result[students[i].kelas] !== undefined){
+        if(temp.score > result[students[i].kelas].score){
+          result[students[i].kelas] = temp;
+        }
       }
     }
   }
@@ -26,12 +28,12 @@ function highestScore (students) {
 console.log(highestScore([
   {
     name: 'Dimitri',
-    score: 90,
+    score: 9,
     kelas: 'foxes'
   },
   {
     name: 'Alexei',
-    score: 85,
+    score: 8,
     kelas: 'wolves'
   },
   {
@@ -47,15 +49,15 @@ console.log(highestScore([
 ]));
 
 // {
-//   foxes: { name: 'Dimitri', score: 90 },
-//   wolves: { name: 'Alexei', score: 85 }
+//   foxes: { name: 'Sergei', score: 74 },
+//   wolves: { name: 'Anastasia', score: 78 }
 // }
 
 
 console.log(highestScore([
   {
     name: 'Alexander',
-    score: 100,
+    score: 10,
     kelas: 'foxes'
   },
   {
@@ -81,7 +83,7 @@ console.log(highestScore([
 ]));
 
 // {
-//   foxes: { name: 'Alexander', score: 100 },
+//   foxes: { name: 'Vladimir', score: 92 },
 //   wolves: { name: 'Alisa', score: 76 },
 //   tigers: { name: 'Viktor', score: 80 }
 // }
