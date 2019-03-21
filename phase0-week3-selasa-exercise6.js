@@ -26,6 +26,6 @@ console.log(digitPerkalianMinimum(20)); // 2
 console.log(digitPerkalianMinimum(179)); // 4
 console.log(digitPerkalianMinimum(1)); // 2
 
-  // appproach untuk ambil result nya bisa juga seperti ini, pakai median
+  // // appproach untuk ambil result nya bisa juga seperti ini, pakai median
   // var median = ( arrDigitSum.length - 1 ) / 2
   // var result = ( arrDigitSum[Math.floor(median)] + arrDigitSum[Math.ceil(median)] ) / 2
