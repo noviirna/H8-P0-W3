@@ -13,8 +13,6 @@ function makanTerusRekursif(waktu) {
     count++
     return count + makanTerusRekursif(waktu)
   }
-  count++ 
-  return count
 }
 
 // TEST CASES
