@@ -19,6 +19,10 @@ function sorting(arrNumber) {
 function getTotal(arrNumber) {
   // code di sini
   var largest = arrNumber[0];
+  if(largest == undefined){
+    return '';
+  }
+
   var total = 0;
   for(var i = 0; i < arrNumber.length; i++){
     if(arrNumber[i] == largest){
@@ -26,11 +30,6 @@ function getTotal(arrNumber) {
     }
   }
   var result = "angka paling besar adalah " + largest + " dan jumlah kemunculan sebanyak " + total + " kali";
-
-  if(largest == undefined){
-    return '';
-  }
-
   return result;
 }
 
