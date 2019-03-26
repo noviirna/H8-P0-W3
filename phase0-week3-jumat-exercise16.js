@@ -1,33 +1,57 @@
 function graduates (students) {
-    // Code disini
-    var result = {};
-    for(var i = 0; i < students.length; i++){
-        if(result[students[i].class] === undefined){
-            result[students[i].class] = []
-            var temp = {
-                name : students[i].name,
-                score : students[i].score
-            }
-
-            if( students[i].score > 75){
-                result[students[i].class].push(temp);
-            }
-        }
-        else{
-            var temp = {
-                name : students[i].name,
-                score : students[i].score
-            }
-
-            if( students[i].score > 75){
-                result[students[i].class].push(temp);
-            }
-            
-        }
+  // Code disini
+  var result = {};
+  for(var i = 0; i < students.length; i++){
+    var temp = {
+      name : students[i].name,
+      score : students[i].score
     }
-    return result;
+    if(result[students[i].class] === undefined){
+      result[students[i].class] = []
+      if(students[i].score > 75){
+        result[students[i].class].push(temp);
+      }
+    }
+    else{
+      if(students[i].score > 75){
+        result[students[i].class].push(temp);
+      }    
+    }
   }
-  
+  return result;
+}
+
+/**
+ * 
+ * 2nd approach, easier to read because i put the object's key name into variables 
+ function graduates (students) {
+  // Code disini
+  var result = {}
+  for(var i = 0; i < students.length; i++){
+    var thename = students[i].name;
+    var thescore = students[i].score;
+    var theclass = students[i].class;
+    var studentData = {
+      name : thename,
+      score : thescore
+    }
+    if(result[theclass] == undefined){
+      result[theclass] = []
+      if(thescore > 75){
+        result[theclass].push(studentData)
+      }
+    }
+    else{
+      if(thescore > 75){
+        result[theclass].push(studentData)
+      }
+    }
+  }
+  return result
+}
+ * 
+ */
+
   console.log(graduates([
     {
       name: 'Dimitri',
