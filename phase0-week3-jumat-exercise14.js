@@ -1,102 +1,89 @@
 function changeVocals (str) {
   //code di sini
   if(str.length < 5){
-    return null
+    return ''
   }
-  var result = ''
-  var vocalUpperCase = "AEIOU"
-  var switchVocalUC = "BFJPV"
-  var vocalLowerCase = "aeiou"
-  var switchVocalLC = "bfjpv"
-
-  for (var i = 0; i < str.length; i++){
-    var temp = str[i];
-    for(var j = 0; j < vocalUpperCase.length; j++){
-      if(str[i] === vocalUpperCase[j]){
-        temp  = switchVocalUC[j];
+  var vocalsUp = 'AIUEO'
+  var vocalsLow = 'aiueo'
+  var consUp = 'BJVFP'
+  var consLow = 'bjvfp'
+  var changed = ''
+  for(var i = 0; i < str.length; i++){
+    var temp = {}
+    var isVocal = false
+    for(var j = 0; j < vocalsUp.length; j++){
+      if(str[i] == vocalsUp[j]){
+        isVocal = true
+        temp = consUp[j]
       }
-      if(str[i]  === vocalLowerCase[j]){
-        temp  = switchVocalLC[j];
+      if(str[i] == vocalsLow[j]){
+        isVocal = true
+        temp = consLow[j]
       }
     }
-    result = result + temp;
-  } // end of for loop
-  return result;
-} // end of function
+    if(isVocal == false){
+      temp = str[i]  
+    }
+    changed += temp
+  }
+  return changed
+}
 
 function reverseWord (str) {
   //code di sini
-  if(str == null){
-    return null
+  var reversed = ''
+  for(var i = str.length-1; i >=0; i--){
+    reversed += str[i]
   }
-  var reverse = '';
-  for(var i = str.length-1; i >= 0; i--){
-    reverse = reverse + str[i];
-  }
-  return reverse;
-} // end of function
-
+  return reversed
+}
 
 function setLowerUpperCase (str) {
   //code di sini
-  if(str == null){
-    return null
-  }
-  var upperCaseAlphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  var lowerCaseAlphabet = 'abcdefghijklmnopqrstuvwxyz';
-  var result = '';
-
-  for (var i = 0; i < str.length; i++){
-    var temp = str[i];
-    for(var j = 0; j < upperCaseAlphabet.length; j++){
-      if(str[i] === upperCaseAlphabet[j]){
-        temp  = lowerCaseAlphabet[j];
+  var ucAlphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  var lcAlphabet = 'abcdefghijklmnopqrstuvwxyz'
+  var changed = ''
+  for(var i = 0; i < str.length; i++){
+    var temp = ''
+    var needChange = false
+    for(var j = 0; j < ucAlphabet.length; j++){
+      if(str[i] == ucAlphabet[j]){
+        temp = lcAlphabet[j]
+        needChange = true
       }
-      if(str[i]  === lowerCaseAlphabet[j]){
-        temp  = upperCaseAlphabet[j];
+      if(str[i] == lcAlphabet[j]){
+        temp = ucAlphabet[j]
+        needChange = true
       }
     }
-    result = result + temp;
-  } // end of for loop
-return result;
-} // end of function
+    if(needChange ==  false){
+      temp = str[i]
+    }
+    changed += temp
+  }
+  return changed
+}
 
 function removeSpaces (str) {
   //code di sini
-  if(str == null){
-    return null
-  }
-  var result = ''
+  var removed = ''
   for(var i = 0; i < str.length; i++){
-    if(str[i] === ' '){
-      result = result + '';
-    }
-    else{
-      result = result + str[i];
+    if(str[i] != ' '){
+      removed+= str[i]
     }
   }
-  return result;
-} // end of function
+  return removed
+}
 
 function passwordGenerator (name) {
-  //code di sini
-
-  // // approach 1 - manggil fungsinya satu satu
-  // var result = changeVocals(name);
-  // result = reverseWord(result);
-  // result = setLowerUpperCase(result);
-  // result = removeSpaces((result));
-  // if(result == null){
-  //   return 'Minimal karakter yang diinputkan adalah 5 karakter'
-  // }
-  // else{
-  //   return result
-  // }
-
-  // // approach 2 - manggil fungsinya langsung
-  result = removeSpaces(setLowerUpperCase(reverseWord(changeVocals(name))));
-  return result;
-} // end of function
+  result = removeSpaces(setLowerUpperCase(reverseWord(changeVocals(name))))
+  if(result == ''){
+    return 'Minimal karakter yang diinputkan adalah 5 karakter'
+  }
+  else{
+    return result
+  } 
+}
 
 console.log(passwordGenerator('Sergei Dragunov')); // 'VPNVGBRdJFGRFs'
 console.log(passwordGenerator('Dimitri Wahyudiputra')); // 'BRTVPJDVYHBwJRTJMJd'
